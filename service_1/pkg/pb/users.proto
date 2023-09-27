@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package users;
+
+option go_package = "./pkg/pb";
+
+service Users{
+    rpc ListUsers (RequestParams) returns (ResponseData){};
+}
+
+message RequestParams{
+    int32 method = 1;
+    int32 waitTime = 2;
+}
+message ResponseData{
+    int64 userID =1;
+    string userName = 2;
+}
